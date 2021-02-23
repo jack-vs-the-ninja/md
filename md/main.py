@@ -22,8 +22,18 @@ def override_config_file(config_file, **kwargs):
         yield fp.name
 
 
-@task(name='serve', default=True)
+@task(
+    name='serve',
+    default=True,
+    help={
+        'docs-dir': 'path to directory containing markdown files',
+        'dev-addr': '0.0.0.0:8000'
+    },
+)
 def mkdocs_serve(ctx, docs_dir=None, dev_addr=None):
+    """
+    Serve some local markdown.
+    """
 
     if docs_dir is None:
         docs_dir = '.'
@@ -31,10 +41,11 @@ def mkdocs_serve(ctx, docs_dir=None, dev_addr=None):
     docs_dir_path = Path(docs_dir).absolute()
 
     if dev_addr is None:
-        dev_addr = 'localhost:8000'
+        dev_addr = '0.0.0.0:8000'
 
-    assert os.environ.get('MKDOCS_PROJECT_DIR') and os.environ.get('MKDOCS_PROJECT_ENV'),\
-        'please set MKDOCS_PROJECT_DIR and MKDOCS_PROJECT_ENV'
+    os.environ.setdefault('MKDOCS_PROJECT_DIR', str(Path(__file__).parent.parent / 'example-config-dir'))
+    os.environ.setdefault('MKDOCS_PROJECT_ENV', 'default')
+    print(os.environ.get('MKDOCS_PROJECT_DIR') or 'NOT SET')
 
     config_file_basename = os.environ.get('MKDOCS_PROJECT_CONFIG_FILE_BASENAME') or 'mkdocs.yml'
     config_file = Path(os.environ['MKDOCS_PROJECT_DIR']) / config_file_basename
