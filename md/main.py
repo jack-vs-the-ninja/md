@@ -12,6 +12,7 @@ ns = Collection()
 
 @contextmanager
 def override_config_file(config_file, **kwargs):
+    import pymdownx.superfences
 
     with open(config_file) as base:
         dd = yaml.load(base, Loader=yaml.FullLoader)

@@ -22,6 +22,7 @@ theme:
 extra_javascript:
 - js/mathjax.js
 - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+- 'https://unpkg.com/mermaid@8.9.1/dist/mermaid.min.js'
 extra_css:
 - css/extra.css
 markdown_extensions:
@@ -29,6 +30,12 @@ markdown_extensions:
 - pymdownx.details
 - pymdownx.tasklist:
     custom_checkbox: true
+- pymdownx.superfences:
+    preserve_tabs: true
+    custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_div_format
 - admonition
 - codehilite:
     guess_lang: false
