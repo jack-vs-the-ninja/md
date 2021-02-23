@@ -1,0 +1,8 @@
+*.pyc
+.DS_Store
+.idea
+local
+*.output
+venv
+*.egg-info
+
