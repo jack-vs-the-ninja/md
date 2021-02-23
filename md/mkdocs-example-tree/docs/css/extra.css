@@ -1,0 +1,18 @@
+body {
+    font-family: Avenir Next, sans-serif;
+}
+
+h1,h2 {
+    font-weight: bolder;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+@media print {
+ body {
+      font-family: Avenir Next, sans-serif;
+  }
+}
+

@@ -1,0 +1,48 @@
+site_name: 'My Wiki'
+site_description: ''
+site_author: ''
+site_url: ''
+
+copyright: ''
+
+theme:
+  name: 'material'
+  custom_dir: overrides/
+  palette:
+    primary: '546E7A'
+    accent: '546E7A'
+  font: false
+  logo: ''
+  favicon: ''
+#extra:
+#  social:
+#  - type: ''
+#    link: ''
+#  manifest: ''
+extra_javascript:
+- js/mathjax.js
+- 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+extra_css:
+- css/extra.css
+markdown_extensions:
+- pymdownx.arithmatex
+- pymdownx.details
+- pymdownx.tasklist:
+    custom_checkbox: true
+- admonition
+- codehilite:
+    guess_lang: false
+- toc:
+    permalink: true
+plugins:
+  - exclude:
+      glob:
+        - node_modules/*
+        - "*.pdf"
+        - "*.gz"
+        - "*.py"
+        - "*.pyc"
+      regex:
+        - '.*\.(bin|tar)$'
+
+nav:
