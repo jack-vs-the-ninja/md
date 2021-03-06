@@ -39,8 +39,9 @@ markdown_extensions:
         class: mermaid
         format: !!python/name:pymdownx.superfences.fence_div_format
 - admonition
-- codehilite:
+- pymdownx.highlight:
     guess_lang: false
+    use_pygments: false
 - toc:
     permalink: true
 plugins:
