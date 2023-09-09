@@ -22,7 +22,7 @@ theme:
 extra_javascript:
 - js/mathjax.js
 - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
-- 'https://unpkg.com/mermaid@8.9.1/dist/mermaid.min.js'
+- 'https://cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js'
 extra_css:
 - css/extra.css
 markdown_extensions:
@@ -45,6 +45,7 @@ markdown_extensions:
 - toc:
     permalink: true
 plugins:
+  - search
   - exclude:
       glob:
         - node_modules/*
