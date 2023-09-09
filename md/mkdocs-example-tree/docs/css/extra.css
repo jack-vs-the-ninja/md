@@ -16,3 +16,11 @@ h3 {
   }
 }
 
+/* can fix some content for convenient sidebar access */
+/*
+.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    max-width: 33%;
+}*/
